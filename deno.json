@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "nunjucks": "deno run --allow-net --allow-read --allow-write --allow-env build.ts",
+    "twd": "deno run --allow-read=. --allow-write=. --allow-net=deno.land,esm.sh,cdn.esm.sh https://deno.land/x/twd@v0.4.8/cli.ts ./templates/index.html -o ./.dist/tailwind.css",
+    "build": "deno task nunjucks && deno task twd"
+  },
+  "importMap": "./import_map.json"
+}

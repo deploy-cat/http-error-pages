@@ -1,8 +1,15 @@
+FROM denoland/deno:alpine as builder
+
+WORKDIR /app
+
+ADD . .
+RUN deno task build
+
+
 FROM nginx:alpine
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 EXPOSE 8080
-RUN apk update && apk add --no-cache git && \
-    git clone https://github.com/httpcats/http.cat.git
-
 ADD nginx.conf /etc/nginx/nginx.conf
+
+COPY --from=builder /app/.dist /var/www/html

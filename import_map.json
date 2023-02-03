@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "nunjucks": "https://deno.land/x/nunjucks@3.2.3/mod.js",
+    "copy": "https://deno.land/std@0.176.0/fs/copy.ts"
+  }
+}

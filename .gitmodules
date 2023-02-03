@@ -1,0 +1,3 @@
+[submodule "http.cat"]
+	path = http.cat
+	url = https://github.com/httpcats/http.cat
